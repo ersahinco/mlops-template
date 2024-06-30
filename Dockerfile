@@ -1,37 +1,31 @@
-FROM python:3.12.3-slim-bullseye as base
+# Using Python 3.12 slim image
+FROM python:3.12-slim-bullseye AS base
 
-ENV PYTHONUNBUFFERED 1
-WORKDIR /build
+ENV PYTHONUNBUFFERED=1
+WORKDIR /app
 
-# Create requirements.txt file
-FROM base as poetry
+# Install Poetry
 RUN pip install poetry==1.8.2
+
+# Copy only files necessary for dependencies to avoid cache busting
 COPY poetry.lock pyproject.toml ./
-RUN poetry export -o /requirements.txt --without-hashes
 
-FROM base as common
-COPY --from=poetry /requirements.txt .
-# Create venv, add it to path and install requirements
-RUN python -m venv /venv
-ENV PATH="/venv/bin:$PATH"
-RUN pip install -r requirements.txt
+# Export poetry dependencies to requirements.txt and install them
+RUN poetry export -o requirements.txt --without-hashes
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install uvicorn server
+# Install uvicorn with performance extras
 RUN pip install uvicorn[standard]
 
-# Copy the rest of app
-COPY app app
-COPY alembic alembic
-COPY alembic.ini .
-COPY pyproject.toml .
-COPY init.sh .
+# Add the rest of the application files
+COPY . .
 
-# Create new user to run app process as unprivilaged user
-RUN addgroup --gid 1001 --system uvicorn && \
-    adduser --gid 1001 --shell /bin/false --disabled-password --uid 1001 uvicorn
+# Optional: Create a non-root user to run the application
+RUN addgroup --system app && adduser --system --group app
+USER app
 
-# Run init.sh script then start uvicorn
-RUN chown -R uvicorn:uvicorn /build
-CMD bash init.sh && \
-    runuser -u uvicorn -- /venv/bin/uvicorn app.main:app --app-dir /build --host 0.0.0.0 --port 8000 --workers 2 --loop uvloop
+# Expose the application on port 8000
 EXPOSE 8000
+
+# Run the application
+CMD ["sh", "-c", "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"]

@@ -1,23 +1,26 @@
-# For local development, only database is running
-#
-# docker compose up -d
-# uvicorn app.main:app --reload
-#
+version: '3.8'
 
 services:
   postgres_db:
-    restart: unless-stopped
     image: postgres:16
+    restart: unless-stopped
     volumes:
       - postgres_db:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=${DATABASE__DB}
       - POSTGRES_USER=${DATABASE__USERNAME}
       - POSTGRES_PASSWORD=${DATABASE__PASSWORD}
-    env_file:
-      - .env
     ports:
-      - "${DATABASE__PORT}:5432"
+      - "5432:5432"  # Ensure this matches the environment port if it's customized
+
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres_db
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://${DATABASE__USERNAME}:${DATABASE__PASSWORD}@${DATABASE__HOSTNAME}:${DATABASE__PORT}/${DATABASE__DB}
 
 volumes:
   postgres_db:
