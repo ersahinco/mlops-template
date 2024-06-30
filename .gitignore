@@ -132,3 +132,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# DEV Artifacts
+notes.md
+.DS_Store
