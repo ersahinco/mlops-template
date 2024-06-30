@@ -49,6 +49,11 @@ Brief descriptions of each endpoint:
   - Models: `app/models.py`
   - Schemas: Located in `app/schemas/requests` and `app/schemas/responses`
   - Tests: `app/tests/test_arxiv/test_arxiv_endpoints.py`
+  - **GitHub Workflows**:
+    - `dev_build.yml`: Builds and pushes Docker images to Docker Hub.
+    - `tests.yml`: Runs unit tests using pytest.
+    - `type_check.yml`: Performs type checking and code formatting checks.
+  - **Test Coverage**: The test coverage is not 100%, causing failures in the GitHub workflow. This can be resolved by adding more detailed test cases.
 
 ## Contact
 
