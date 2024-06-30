@@ -1,8 +1,9 @@
 from fastapi import APIRouter
 
 from app.api import api_messages
-from app.api.endpoints import auth, users
+from app.api.endpoints import auth, users, arxiv
 
+# Setup routers for each module
 auth_router = APIRouter()
 auth_router.include_router(auth.router, prefix="/auth", tags=["auth"])
 
@@ -31,4 +32,7 @@ api_router = APIRouter(
         },
     }
 )
+
+# Include the individual routers with specific prefixes and tags
 api_router.include_router(users.router, prefix="/users", tags=["users"])
+api_router.include_router(arxiv.router, prefix="/arxiv", tags=["arxiv"])

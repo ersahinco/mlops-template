@@ -1,0 +1,129 @@
+{
+  "bozo": false,
+  "entries": [
+    {
+      "id": "http://arxiv.org/abs/physics/0510251v2",
+      "guidislink": true,
+      "link": "http://arxiv.org/abs/physics/0510251v2",
+      "updated": "2006-08-25T22:54:04Z",
+      "updated_parsed": {
+        "tm_year": 2006,
+        "tm_mon": 8,
+        "tm_mday": 25,
+        "tm_hour": 22,
+        "tm_min": 54,
+        "tm_sec": 4,
+        "tm_wday": 4,
+        "tm_yday": 237,
+        "tm_isdst": 0
+      },
+      "published": "2005-10-27T18:40:38Z",
+      "published_parsed": {
+        "tm_year": 2005,
+        "tm_mon": 10,
+        "tm_mday": 27,
+        "tm_hour": 18,
+        "tm_min": 40,
+        "tm_sec": 38,
+        "tm_wday": 3,
+        "tm_yday": 300,
+        "tm_isdst": 0
+      },
+      "title": "Theoretical remark on the superconductivity of metals",
+      "title_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "",
+        "value": "Theoretical remark on the superconductivity of metals"
+      },
+      "summary": "In this paper Einstein develops some crucial ideas about superconductivity",
+      "summary_detail": {
+        "type": "text/plain",
+        "language": null,
+        "base": "",
+        "value": "In this paper Einstein develops some crucial ideas about superconductivity"
+      },
+      "authors": [
+        {
+          "name": "Albert Einstein"
+        }
+      ],
+      "author_detail": {
+        "name": "Albert Einstein"
+      },
+      "author": "Albert Einstein",
+      "arxiv_comment": "Translation of Albert Einstein's article \"Theoretische Bemerkungen\n  zur Supraleitung der Metalle\", Gedenkboek aangeb. aan H. Kamerlingh Onnes,\n  eaz. Leiden, E. IJdo, 1922 (page 435) Translated by Bjoern S. Schmekel with\n  the courtesy of the Kamerlingh Onnes Laboratory, Leiden - Institute of\n  Physics, Leiden University - A typo in the citation of the original article\n  has been corrected",
+      "links": [
+        {
+          "href": "http://arxiv.org/abs/physics/0510251v2",
+          "rel": "alternate",
+          "type": "text/html"
+        },
+        {
+          "title": "pdf",
+          "href": "http://arxiv.org/pdf/physics/0510251v2",
+          "rel": "related",
+          "type": "application/pdf"
+        }
+      ],
+      "arxiv_primary_category": {
+        "term": "physics.hist-ph",
+        "scheme": "http://arxiv.org/schemas/atom"
+      },
+      "tags": [
+        {
+          "term": "physics.hist-ph",
+          "scheme": "http://arxiv.org/schemas/atom",
+          "label": null
+        },
+        {
+          "term": "cond-mat.supr-con",
+          "scheme": "http://arxiv.org/schemas/atom",
+          "label": null
+        }
+      ]
+    }
+  ],
+  "feed": {
+    "links": [
+      {
+        "href": "http://arxiv.org/api/query?search_query%3Dau%3AEinstein%26id_list%3D%26start%3D0%26max_results%3D1",
+        "rel": "self",
+        "type": "application/atom+xml"
+      }
+    ],
+    "title": "ArXiv Query: search_query=au:Einstein&id_list=&start=0&max_results=1",
+    "title_detail": {
+      "type": "text/html",
+      "language": null,
+      "base": "",
+      "value": "ArXiv Query: search_query=au:Einstein&id_list=&start=0&max_results=1"
+    },
+    "id": "http://arxiv.org/api/kG7Wy+6mRkrWTT+C90IQSyLwnL4",
+    "guidislink": true,
+    "link": "http://arxiv.org/api/kG7Wy+6mRkrWTT+C90IQSyLwnL4",
+    "updated": "2024-06-28T00:00:00-04:00",
+    "updated_parsed": {
+      "tm_year": 2024,
+      "tm_mon": 6,
+      "tm_mday": 28,
+      "tm_hour": 4,
+      "tm_min": 0,
+      "tm_sec": 0,
+      "tm_wday": 4,
+      "tm_yday": 180,
+      "tm_isdst": 0
+    },
+    "opensearch_totalresults": "116",
+    "opensearch_startindex": "0",
+    "opensearch_itemsperpage": "1"
+  },
+  "headers": {},
+  "encoding": "utf-8",
+  "version": "atom10",
+  "namespaces": {
+    "": "http://www.w3.org/2005/Atom",
+    "opensearch": "http://a9.com/-/spec/opensearch/1.1/",
+    "arxiv": "http://arxiv.org/schemas/atom"
+  }
+}
