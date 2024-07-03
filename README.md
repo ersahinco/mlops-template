@@ -2,7 +2,21 @@
 
 This project demonstrates the use of Python, FastAPI, SQLAlchemy, and Docker Compose to interact with a PostgreSQL database and the arXiv API. It's designed to fetch publication data based on criteria such as author, title, or journal, showcasing core MLOps capabilities.
 
-## Features
+## Notes
+- **Project Structure**:
+  - `main.py`: Entry point of the application.
+  - API Core Functions: Located in `app/api/endpoints/arxiv.py`
+  - Models: Located in `app/models.py`
+  - Schemas: Located in `app/schemas/requests` and `app/schemas/responses`
+  - Tests: Located in `app/tests/test_arxiv/test_arxiv_endpoints.py`
+  - **GitHub Workflows**: Example github workflow is included in the project folder.
+    - `dev_build.yml`: Builds and pushes Docker images to Docker Hub.
+    - `tests.yml`: Runs unit tests using pytest.
+    - `type_check.yml`: Performs type checking and code formatting checks.
+  - **Test Coverage**: The test coverage is not 100%, causing failures in the GitHub workflow. This can be resolved by adding more detailed test cases.
+  - **JWT Authentication**: The template includes JWT components; however, they are not utilized for endpoint authentication in this use case.
+
+## Tech requirements
 
 - **FastAPI**: Used to build RESTful endpoints, simplifying both development and testing processes.
 - **SQLAlchemy ORM**: Handles database operations, providing a high level of abstraction from SQL code.
@@ -19,7 +33,7 @@ This project demonstrates the use of Python, FastAPI, SQLAlchemy, and Docker Com
 ### Installation
 
 1. Clone or download the project folder from the repository.
-2. Navigate to the project directory using the terminal: `cd mlops-template`
+2. Navigate to the project folder: `cd mlops-template`
 3. Launch the services with Docker Compose: `docker-compose up -d`
 
 ### Running the Application
@@ -39,21 +53,6 @@ Brief descriptions of each endpoint:
 - `POST /arxiv/search`: Searches the arXiv API for articles based on author, title, or journal.
 - `GET /arxiv/queries`: Retrieves query records within a specified timestamp range.
 - `GET /arxiv/results`: Provides stored query results, supporting pagination for large datasets.
-
-## Additional Notes
-
-- **JWT Authentication**: The template includes JWT components; however, they are not utilized for endpoint authentication in this use case.
-- **Project Structure**:
-  - `main.py`: Entry point of the application.
-  - API Core Functions: `app/api/endpoints/arxiv.py`
-  - Models: `app/models.py`
-  - Schemas: Located in `app/schemas/requests` and `app/schemas/responses`
-  - Tests: `app/tests/test_arxiv/test_arxiv_endpoints.py`
-  - **GitHub Workflows**:
-    - `dev_build.yml`: Builds and pushes Docker images to Docker Hub.
-    - `tests.yml`: Runs unit tests using pytest.
-    - `type_check.yml`: Performs type checking and code formatting checks.
-  - **Test Coverage**: The test coverage is not 100%, causing failures in the GitHub workflow. This can be resolved by adding more detailed test cases.
 
 ## Contact
 

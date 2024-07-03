@@ -8,7 +8,7 @@ from app.core.config import get_settings
 app = FastAPI(
     title="Minimal fastapi-postgres template for MLOps role at Zeiss",
     version="6.0.0",
-    description="https://github.com/ersahinco/minimal-fastapi-postgres-template",
+    description="The `/arxiv` endpoints can be directly tested using the ```Try it out``` feature in Swagger UI. Simply provide the necessary parameters or request body depending on the endpoint and execute the requests. No authentication is required to access these endpoints.",
     openapi_url="/openapi.json",
     docs_url="/",
 )
